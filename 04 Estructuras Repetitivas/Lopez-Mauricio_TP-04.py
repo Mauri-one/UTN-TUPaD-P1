@@ -3,20 +3,22 @@ opcion=int(input("Elija un programa a ejecutar: \n1.  Numeros del 1 al 100. \n2.
 
 match opcion:
     case 1:
-        for i in range (1,101):
+        for i in range (1,101):                                               # Imprime los numeros del 1 al 100
             print(i)
 
     case 2:
-        num=input(" Ingrese un numero entero: ")
-        digitos=(len(num))
-        print (f"Su numero {num} tiene {digitos} digitos")
+        num=input(" Ingrese un numero entero: ")                              # Pide un numero entero al usuario
+        digitos=(len(num))                                                    # Cuenta la cantidad de digitos del numero ingresado
+        print (f"Su numero {num} tiene {digitos} digitos")                    # Imprime la cantidad de digitos del numero ingresado                               
     
     case 3:
-        num1= int(input( "Ingrese un numero entero: "))
+        """Escribe un programa que sume todos los números enteros comprendidos entre dos valores
+dados por el usuario, excluyendo esos dos valores. """
+        num1= int(input( "Ingrese un numero entero: ")) 
         num2= int(input( "Ingrese un numero entero: "))
 
-        suma=0
-        for i in range (num1+1,num2):
+        suma=0                                                                # Variable para sumar los numeros
+        for i in range (num1+1,num2):                                         # Se suman los numeros comprendidos entre los dos valores
             suma+=i
         print(f"La suma de los digitos es {suma}")
     
