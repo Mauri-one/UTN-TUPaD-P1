@@ -99,5 +99,5 @@ match opcion:
     case 10:
 
         lista_anidad=[15, True, [25.5, 57.9, 30.6, ], [False]]    # Crea una lista anidada
-        print(lista_anidad)                                       # Imprime la lista anidada
+        print(lista_anidada)                                       # Imprime la lista anidada
     
