@@ -91,15 +91,15 @@ def sumar_digitos_dni(dni):                                 # Crea la funcion pa
     return sum(int(digito) for digito in str(dni))          # Convierte el DNI a cadena, itera sobre cada dígito, lo convierte a entero y suma todos los dígitos  
 
 
-def diversidad_numerica (conjunto):  
-    for i in range (5):
-        if len(conjunto[i])>=5:
-                print(f"En el conjunto {unicos_list[i]}, hay diversidad numérica")
+def diversidad_numerica (conjunto):                                                     # Crea la funcion para evaluar la diversidad numérica de un conjunto de números
+    for i in range (5): # Itera sobre los 5 conjuntos de números
+        if len(conjunto[i])>=5: # Si el conjunto tiene 5 o más elementos únicos
+                print(f"En el conjunto {unicos_list[i]}, hay diversidad numérica") # imprime que hay diversidad numérica
         else:
                 print(f"En el conjunto {unicos_list[i]}, no hay diversidad numérica")
     return conjunto
 
-def elemento_comun(lista):
+def elemento_comun(lista): 
     if not lista:
         return set()
 
@@ -107,7 +107,7 @@ def elemento_comun(lista):
     comunes = set(lista[0])
 
     # Intersectar con cada sublista restante
-    for sublista in lista[1:]:
+    for sublista in lista[1:]:     
         comunes &= set(sublista)
 
     return comunes
@@ -188,20 +188,20 @@ print(f"Intersección: A ∩ B ∩ C ∩ D ∩ E = {interseccion_total}")       
 diferencia_a = diferencia(unicos_list[0], unicos_list[1:])                                 # Calcula la diferencia entre el primer DNI y los demás                               
 print(f"Diferencia: A - B - C - D - E = {diferencia_a}")                                   # Imprime la diferencia entre el primer DNI y los demás
 
-print(f"A - B = {diferencia(unicos_list[0], [unicos_list[1]])}")                           # Imprime la diferencia de ls dígitos únicos entre el primer y segundo DNI
-print(f"B - C = {diferencia(unicos_list[1], [unicos_list[2]])}")                           # Imprime la diferencia de ls dígitos únicos entre el segundo y tercer DNI
-print(f"C - D = {diferencia(unicos_list[2], [unicos_list[3]])}")                           # Imprime la diferencia de ls dígitos únicos entre el tercer y cuarto DNI
+print(f"A - B = {diferencia(unicos_list[0], [unicos_list[1]])}")                           # Imprime la diferencia de los dígitos únicos entre el primer y segundo DNI
+print(f"B - C = {diferencia(unicos_list[1], [unicos_list[2]])}")                           # Imprime la diferencia de los dígitos únicos entre el segundo y tercer DNI
+print(f"C - D = {diferencia(unicos_list[2], [unicos_list[3]])}")                           # Imprime la diferencia de los dígitos únicos entre el tercer y cuarto DNI
 print(f"D - E = {diferencia(unicos_list[3], [unicos_list[4]])}")
 
 
-print("\nDiferencia Simétrica entre pares:")
-for i in range(len(unicos_list) - 1):
-    resultado_par = diferencia_simetrica_dos_listas(unicos_list[i], unicos_list[i+1])
-    print(f"{nombres[i]} Δ {nombres[i+1]} = {resultado_par}")
-
-resultado_total = unicos_list[0]
-for i in range(1, len(unicos_list)):
-    resultado_total = diferencia_simetrica_dos_listas(resultado_total, unicos_list[i])
+print("\nDiferencia Simétrica entre pares:")                                              
+for i in range(len(unicos_list) - 1): 
+    resultado_par = diferencia_simetrica_dos_listas(unicos_list[i], unicos_list[i+1])  
+    print(f"{nombres[i]} Δ {nombres[i+1]} = {resultado_par}")                              # se imprime la diferencia simétrica entre pares de dígitos únicos de los DNIs  
+ 
+resultado_total = unicos_list[0]                                                           # Inicializa el resultado total con la lista de dígitos únicos del primer DNI
+for i in range(1, len(unicos_list)): 
+    resultado_total = diferencia_simetrica_dos_listas(resultado_total, unicos_list[i]) 
 
 print(f"\nDiferencia Simétrica Total: A Δ B Δ C Δ D Δ E = {resultado_total}")
 
